@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="300dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <path
+        android:fillColor="#0E6A8E"
+        android:pathData="M 307.06 0 L 461.172 0 L 333.055 163.51 L 178.943 163.51 Z" />
+    <path
+        android:fillColor="#E52E40"
+        android:pathData="M 307.06 0 L 372.191 0 L 244.074 163.51 L 178.943 163.51 Z" />
+    <path
+        android:fillColor="#EAEAE4"
+        android:pathData="M 356.873 0 L 411.359 0 L 283.242 163.51 L 228.756 163.51 Z" />
+    <path
+        android:fillColor="#F9AC30"
+        android:pathData="M 256 192.762 C 344.155139483 192.762 415.619 264.225860517 415.619 352.381 C 415.619 440.536139483 344.155139483 512 256 512 C 167.844860517 512 96.381 440.536139483 96.381 352.381 C 96.381 264.225860517 167.844860517 192.762 256 192.762 Z" />
+    <path
+        android:fillColor="#F9AC30"
+        android:pathData="M178.945,212.568V163.51h154.112v49.058l26.122,18.024v-80.144c0-7.21-5.841-13.061-13.061-13.061 H165.884c-7.21,0-13.061,5.851-13.061,13.061v80.154L178.945,212.568z" />
+    <path
+        android:fillColor="#DD8D19"
+        android:pathData="M 256 232.886 C 321.995266181 232.886 375.495 286.385733819 375.495 352.381 C 375.495 418.376266181 321.995266181 471.876 256 471.876 C 190.004733819 471.876 136.505 418.376266181 136.505 352.381 C 136.505 286.385733819 190.004733819 232.886 256 232.886 Z" />
+    <path
+        android:fillColor="#E52E40"
+        android:pathData="M 204.94 0 L 50.828 0 L 178.945 163.51 L 333.057 163.51 Z" />
+    <path
+        android:fillColor="#0E6A8E"
+        android:pathData="M 204.94 0 L 139.808 0 L 267.926 163.51 L 333.057 163.51 Z" />
+    <path
+        android:fillColor="#EAEAE4"
+        android:pathData="M 155.127 0 L 100.641 0 L 228.758 163.51 L 283.244 163.51 Z" />
+    <path
+        android:fillColor="#F9AC30"
+        android:pathData="M248.551,299.629l-8.05,10.12c-1.61,1.61-3.68,2.3-5.059,2.3c-4.831,0-8.28-5.059-8.28-9.89 c0-3.449,1.84-7.359,4.831-9.429l23.919-22.999c1.61-1.609,3.45-2.53,6.21-2.53c5.059,0,10.809,2.989,10.809,8.05v152.253 c0,5.29-6.21,8.05-12.19,8.05c-6.21,0-12.19-2.761-12.19-8.05V299.629z" />
+</vector>

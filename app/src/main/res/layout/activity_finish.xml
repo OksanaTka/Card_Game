@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinishActivity"
+    android:layout_gravity="center"
+    android:background="#83673AB7"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/medal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/finish_LBL_playerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#00000000"
+        android:textColor="#CC4B4B"
+        android:text="Both players WON!"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        />
+    <ImageView
+        android:id="@+id/finish_IMG_winner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/player_0"
+        android:scaleType="centerInside"
+        />
+
+
+    <TextView
+        android:id="@+id/finish_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        android:background="#00000000"
+        android:textColor="#CC4B4B"
+        android:text="Best Score:#"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        />
+
+</LinearLayout>
