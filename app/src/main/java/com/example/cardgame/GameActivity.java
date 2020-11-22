@@ -11,9 +11,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GameActivity extends AppCompatActivity {
+import java.util.NoSuchElementException;
 
-    private final int DECK_SIZE = 52;
+import static com.example.cardgame.Cards.DECK_SIZE;
+
+public class GameActivity extends AppCompatActivity {
 
     private ImageButton game_IBTN_start;
     private ImageView game_IMG_card1;
@@ -21,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView game_LBL_score1;
     private TextView game_LBL_score2;
 
-    private Cards cards;
+    private Cards cards,cards2;
     private int score1, score2, best_score, theWinner;
     private int check;
 
@@ -33,13 +35,11 @@ public class GameActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
 
-
-
         score1 = 0;
         score2 = 0;
         check = 0;
+
         cards = new Cards();
-        initializeCardsDeck(cards);
 
         game_IBTN_start = findViewById(R.id.game_IBTN_play);
         game_IMG_card1 = findViewById(R.id.game_IMG_card1);
@@ -50,11 +50,10 @@ public class GameActivity extends AppCompatActivity {
         game_IBTN_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //check if all the cards showed
-                if (check != DECK_SIZE / 2) {
+                try {
                     showCardsAndGetScore();
-                    check++;
-                } else {
+
+                } catch (NoSuchElementException e) {
                     getWinnerAndBestScore();
                     openFinishActivity(GameActivity.this);
                 }
@@ -89,15 +88,15 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void showCardsAndGetScore() {
-        int first = 0, second = 0;
+        String first, second;
 
         // get two random cards
-        first = randomCards();
-        second = randomCards();
+        first = cards.getNextCard();
+        second = cards.getNextCard();
 
         //set image of the cards
-        game_IMG_card1.setImageResource(first);
-        game_IMG_card2.setImageResource(second);
+        game_IMG_card1.setImageResource(getImage(first));
+        game_IMG_card2.setImageResource(getImage(second));
 
         //get cards score
         getScore(first, second);
@@ -105,7 +104,7 @@ public class GameActivity extends AppCompatActivity {
 
     // compare cards value
     // increase player score
-    private void getScore(int first, int second) {
+    private void getScore(String first, String second) {
         if (cards.compareCards(first, second) > 0) {
             score1++;
             game_LBL_score1.setText("" + score1);
@@ -116,39 +115,11 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    private int randomCards() {
-        int rand = (int) (Math.random() * DECK_SIZE) + 1;
-
-        // get an unused card
-        while (cards.checkCard(rand) == true)
-            rand = (int) (Math.random() * DECK_SIZE) + 1;
-
-        //mark card as used
-        cards.setDeck(rand);
-        //return image
-        return getImage(rand);
-    }
-
-
-    private void initializeCardsDeck(Cards cards) {
-        int cardValue = 2;
-
-        // add all the cards to HashMap in Cards class
-        // key- card image
-        // value- card value
-        for (int i = 1; i <= DECK_SIZE; i++) {
-            cards.addCard(getImage(i), cardValue);
-            //cards with the same number have the same value
-            if ((i % 4) == 0)
-                cardValue++;
-        }
-    }
-
-    // get image by card id (i)
-    private int getImage(int img_num) {
-        String url = "drawable/" + "poker_" + img_num;
-        int img = getResources().getIdentifier(url, "drawable", getPackageName());
+    // get image by card name
+    private int getImage(String img_name) {
+        int img = getResources().getIdentifier(img_name, "drawable", getPackageName());
         return img;
     }
+
 }
 
