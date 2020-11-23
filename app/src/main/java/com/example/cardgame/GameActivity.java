@@ -11,10 +11,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.NoSuchElementException;
-
-import static com.example.cardgame.Cards.DECK_SIZE;
-
 public class GameActivity extends AppCompatActivity {
 
     private ImageButton game_IBTN_start;
@@ -23,7 +19,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView game_LBL_score1;
     private TextView game_LBL_score2;
 
-    private Cards cards,cards2;
+    private Deck deck, cards2;
     private int score1, score2, best_score, theWinner;
     private int check;
 
@@ -39,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
         score2 = 0;
         check = 0;
 
-        cards = new Cards();
+        deck = new Deck();
 
         game_IBTN_start = findViewById(R.id.game_IBTN_play);
         game_IMG_card1 = findViewById(R.id.game_IMG_card1);
@@ -50,11 +46,15 @@ public class GameActivity extends AppCompatActivity {
         game_IBTN_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    showCardsAndGetScore();
 
-                } catch (NoSuchElementException e) {
+                //check if all the cards already showed
+                if (check != Deck.DECK_SIZE / 2) {
+                    showCardsAndGetScore();
+                    check++;
+                } else {
+                    //get the winner and best score
                     getWinnerAndBestScore();
+                    //open finish activity
                     openFinishActivity(GameActivity.this);
                 }
             }
@@ -91,8 +91,10 @@ public class GameActivity extends AppCompatActivity {
         String first, second;
 
         // get two random cards
-        first = cards.getNextCard();
-        second = cards.getNextCard();
+        first = deck.getNextCard();
+        second = deck.getNextCard();
+        if(first == null || second == null)
+            return;
 
         //set image of the cards
         game_IMG_card1.setImageResource(getImage(first));
@@ -105,11 +107,11 @@ public class GameActivity extends AppCompatActivity {
     // compare cards value
     // increase player score
     private void getScore(String first, String second) {
-        if (cards.compareCards(first, second) > 0) {
+        if (deck.compareCards(first, second) > 0) {
             score1++;
             game_LBL_score1.setText("" + score1);
         }
-        if (cards.compareCards(first, second) < 0) {
+        if (deck.compareCards(first, second) < 0) {
             score2++;
             game_LBL_score2.setText("" + score2);
         }

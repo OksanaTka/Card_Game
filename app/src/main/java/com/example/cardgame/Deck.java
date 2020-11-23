@@ -6,28 +6,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.NoSuchElementException;
-;
 
-public class Cards {
+
+public class Deck {
     private Map<String, Integer> deck;
-    private List cards_name;
-    private ListIterator<String> it_cName;
+    private List cardsList;
+    private ListIterator<String> it_cardsList;
     public static final int DECK_SIZE = 52;
 
-    public Cards() {
+    public Deck() {
         this.deck = new <String, Integer>HashMap();
-        initializeCardsDeck();
-        initRandomCardsList();
+        createDeck();
+        shuffleCards();
     }
 
-
-    public void initializeCardsDeck() {
+    // add all the cards to deck
+    // key- img name in drawable directory
+    // value- card value
+    public void createDeck() {
         int cardValue = 2;
         String img_name;
-        // add all the cards to deck
-        // key- img name in drawable directory
-        // value- card value
         for (int i = 1; i <= DECK_SIZE; i++) {
             img_name = "drawable/" + "poker_" + i;
             addCard(img_name, cardValue);
@@ -37,14 +35,17 @@ public class Cards {
         }
     }
 
-    public void initRandomCardsList() {
+
+    public void shuffleCards() {
         //init cards_name
-        this.cards_name = new ArrayList(deck.keySet());
+        this.cardsList = new ArrayList(deck.keySet());
         //randomly replace elements in cards_name
-        Collections.shuffle(this.cards_name);
+        Collections.shuffle(this.cardsList);
         // make cards_name iterable
-        this.it_cName = cards_name.listIterator();
+        this.it_cardsList = cardsList.listIterator();
     }
+
+
 
     // add card to deck
     public void addCard(String img_name, int value) {
@@ -68,10 +69,9 @@ public class Cards {
 
     // get next card name
     public String getNextCard() {
-        if (this.it_cName.hasNext())
-            return this.it_cName.next();
-        throw new NoSuchElementException();
-
+        if (it_cardsList.hasNext())
+            return this.it_cardsList.next();
+        return null;
     }
 
 }
