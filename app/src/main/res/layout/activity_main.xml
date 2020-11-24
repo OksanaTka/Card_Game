@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77F8E4E4"
+    android:background="@color/background_1"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -17,7 +17,7 @@
         android:gravity="center"
         android:layout_marginTop="30dp"
         android:text="Card Game"
-        android:textColor="#4D5967"
+        android:textColor="@color/gray_main_LBL"
         android:textSize="60dp"
         android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
         android:layout_weight="5"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:backgroundTint="#E14040"
+        android:backgroundTint="@color/red_main_BTN"
         android:text="Start Game" />
 
 
@@ -40,7 +40,7 @@
         android:layout_gravity="center"
         android:layout_weight="100"
         android:scaleType="fitEnd"
-        android:background="#00000000"
+        android:background="@color/no_background"
         android:src="@drawable/hand" />
 
 </LinearLayout>

@@ -19,7 +19,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView game_LBL_score1;
     private TextView game_LBL_score2;
 
-    private Deck deck, cards2;
+    private Deck deck;
     private int score1, score2, best_score, theWinner;
     private int check;
 
@@ -121,6 +121,13 @@ public class GameActivity extends AppCompatActivity {
     private int getImage(String img_name) {
         int img = getResources().getIdentifier(img_name, "drawable", getPackageName());
         return img;
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 
 }

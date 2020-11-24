@@ -2,9 +2,13 @@ package com.example.cardgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +21,7 @@ public class FinishActivity extends AppCompatActivity {
     private TextView finish_LBL_score;
     private ImageView finish_IMG_winner;
     private TextView finish_LBL_playerName;
+    private Button finish_BTN_backMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class FinishActivity extends AppCompatActivity {
         finish_LBL_score = findViewById(R.id.finish_LBL_score);
         finish_IMG_winner = findViewById(R.id.finish_IMG_winner);
         finish_LBL_playerName = findViewById(R.id.finish_LBL_playerName);
+        finish_BTN_backMenu = findViewById(R.id.finish_BTN_backMenu);
 
         showResults();
     }
@@ -45,7 +51,16 @@ public class FinishActivity extends AppCompatActivity {
             finish_IMG_winner.setImageResource(imgWinner);
         }
 
+        finish_BTN_backMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
+
+
     private int getWinnerImage(int winner) {
         String url = "drawable/" + "player_" + winner;
         finish_LBL_playerName.setText("player " + winner);

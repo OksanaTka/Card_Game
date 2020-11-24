@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
     android:gravity="bottom"
-    android:background="#1EC1B2"
+    android:background="@color/background_game"
     android:orientation="vertical"
     tools:context=".GameActivity">
 
@@ -39,8 +39,17 @@
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
                 android:layout_weight="1"
-                android:background="#00000000"
+                android:background="@color/no_background"
                 android:src="@drawable/player_1" />
+            <TextView
+                android:id="@+id/game_LBL_player1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text="player 1" />
 
         </LinearLayout>
 
@@ -51,7 +60,7 @@
             android:scaleType="fitCenter"
             android:layout_gravity="left"
             android:layout_weight="3.5"
-            android:background="#00000000"
+            android:background="@color/no_background"
             android:src="@drawable/poker_back" />
 
         <ImageView
@@ -61,7 +70,7 @@
             android:scaleType="fitCenter"
             android:layout_gravity="right"
             android:layout_weight="3.5"
-            android:background="#00000000"
+            android:background="@color/no_background"
             android:src="@drawable/poker_back" />
 
         <LinearLayout
@@ -87,8 +96,17 @@
                 android:layout_height="wrap_content"
                 android:scaleType="fitCenter"
                 android:layout_weight="1"
-                android:background="#00000000"
+                android:background="@color/no_background"
                 android:src="@drawable/player_2" />
+            <TextView
+                android:id="@+id/game_LBL_player2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:text="player 2" />
 
         </LinearLayout>
 
@@ -102,7 +120,7 @@
         android:scaleType="fitCenter"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:background="#00000000"
+        android:background="@color/no_background"
         android:src="@drawable/play2"
         />
 
