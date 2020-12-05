@@ -13,5 +13,6 @@
   <color name="background_1">#77F8E4E4</color>
   <color name="background_game">#1EC1B2</color>
   <color name="no_background">#00000000</color>
+  <color name="ic_launcher_background">#4BC999</color>
 
 </resources>

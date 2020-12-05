@@ -1,4 +1,4 @@
-package com.example.cardgame;
+package com.example.cardgame.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.cardgame.R;
 
 public class FinishActivity extends AppCompatActivity {
 

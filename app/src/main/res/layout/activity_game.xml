@@ -8,8 +8,22 @@
     android:gravity="bottom"
     android:background="@color/background_game"
     android:orientation="vertical"
-    tools:context=".GameActivity">
+    tools:context=".activity.GameActivity">
 
+    <ProgressBar
+        android:id="@+id/game_SB_statusBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="200dp"
+        android:layout_centerHorizontal="true"
+        android:progress="1"
+        android:max="26"
+        android:progressDrawable="@drawable/progress_bar"
+
+        />
 
     <LinearLayout
         android:id="@+id/dyn_layout"

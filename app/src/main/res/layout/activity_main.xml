@@ -7,15 +7,15 @@
     android:background="@color/background_1"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
 
     <TextView
         android:id="@+id/main_LBL_gameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="30dp"
+        android:gravity="center"
         android:text="Card Game"
         android:textColor="@color/gray_main_LBL"
         android:textSize="60dp"
@@ -26,11 +26,20 @@
         android:id="@+id/main_BTN_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
+        android:layout_weight="5"
         android:backgroundTint="@color/red_main_BTN"
         android:text="Start Game" />
+
+    <Button
+        android:id="@+id/main_BTN_scoreTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:backgroundTint="@color/red_main_BTN"
+        android:text="Score Table" />
 
 
     <ImageView
@@ -39,8 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="100"
-        android:scaleType="fitEnd"
         android:background="@color/no_background"
+        android:scaleType="fitEnd"
         android:src="@drawable/hand" />
 
 </LinearLayout>

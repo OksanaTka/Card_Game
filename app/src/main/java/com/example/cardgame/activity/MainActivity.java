@@ -1,4 +1,4 @@
-package com.example.cardgame;
+package com.example.cardgame.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cardgame.R;
 
 public class MainActivity extends AppCompatActivity {
 
