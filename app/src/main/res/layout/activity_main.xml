@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,11 +15,12 @@
         android:id="@+id/main_LBL_gameName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="Card Game"
-        android:textColor="@color/gray_main_LBL"
+        android:textColor="@color/gray1"
         android:textSize="60dp"
+        android:fontFamily="@font/aldrich"
         android:textStyle="bold" />
 
 
@@ -27,9 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="5"
-        android:backgroundTint="@color/red_main_BTN"
+        android:backgroundTint="@color/red2"
+        android:fontFamily="@font/aldrich"
         android:text="Start Game" />
 
     <Button
@@ -38,9 +41,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="5"
-        android:backgroundTint="@color/red_main_BTN"
-        android:text="Score Table" />
+        android:backgroundTint="@color/red2"
+        android:fontFamily="@font/aldrich"
+        android:text="Score Board" />
 
+    <Button
+        android:id="@+id/main_BTN_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_weight="5"
+        android:backgroundTint="@color/gray1"
+        android:fontFamily="@font/aldrich"
+        android:text="exit" />
 
     <ImageView
         android:id="@+id/main_IMG_cards"
@@ -51,5 +65,6 @@
         android:background="@color/no_background"
         android:scaleType="fitEnd"
         android:src="@drawable/hand" />
+
 
 </LinearLayout>

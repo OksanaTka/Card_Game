@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -26,8 +27,9 @@
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:background="@color/no_background"
-        android:textColor="@color/red_finish"
+        android:textColor="@color/red1"
         android:text="Both players WON!"
+        android:fontFamily="@font/aldrich"
         android:textStyle="bold"
         android:textSize="40dp"
         />
@@ -53,8 +55,9 @@
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:background="@color/no_background"
-        android:textColor="@color/red_finish"
+        android:textColor="@color/red1"
         android:text="Best Score:#"
+        android:fontFamily="@font/aldrich"
         android:textStyle="bold"
         android:textSize="40dp"
         />
@@ -63,7 +66,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="@color/red_finish"
-        android:text="back to menu" />
+        android:backgroundTint="@color/red1"
+        android:fontFamily="@font/aldrich"
+        android:text="menu" />
 
 </LinearLayout>

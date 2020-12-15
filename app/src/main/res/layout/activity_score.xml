@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activity.ScoreActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/score_LBL_score_board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:fontFamily="@font/aldrich"
+            android:text="Score Board"
+            android:textColor="@color/gray1"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_trophy" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/score_LAY_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="4" />
+
+    <FrameLayout
+        android:id="@+id/score_LAY_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="4"
+        android:background="#45454545" />
+
+    <Button
+        android:id="@+id/score_BTN_backMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/red1"
+        android:fontFamily="@font/aldrich"
+        android:text="menu" />
+
+</LinearLayout>

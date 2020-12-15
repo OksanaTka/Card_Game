@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+   <include
+       android:id="@+id/list_LV_1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       layout="@layout/fragment_list_adapter"/>
+
+
+   <ListView
+       android:id="@+id/list_LV_score"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/white"
+       android:divider="@color/background_1"
+       android:layout_below="@+id/list_LV_1"
+       android:dividerHeight="3dp"
+       />
+
+
+</RelativeLayout>

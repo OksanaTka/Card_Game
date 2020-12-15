@@ -7,9 +7,9 @@
   <color name="teal_700">#FF018786</color>
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
-  <color name="red_finish">#CC4B4B</color>
-  <color name="red_main_BTN">#E14040</color>
-  <color name="gray_main_LBL">#4D5967</color>
+  <color name="red1">#CC4B4B</color>
+  <color name="red2">#E14040</color>
+  <color name="gray1">#4D5967</color>
   <color name="background_1">#77F8E4E4</color>
   <color name="background_game">#1EC1B2</color>
   <color name="no_background">#00000000</color>
