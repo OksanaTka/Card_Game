@@ -23,7 +23,6 @@
             android:resource="@array/preloaded_fonts" />
 
 
-        <activity android:name=".utils.MyAlertDialog"></activity>
         <activity android:name=".activity.BaseActivity" />
         <activity
             android:name=".activity.ScoreActivity"

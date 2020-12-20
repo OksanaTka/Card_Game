@@ -3,7 +3,6 @@ package com.example.cardgame.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -45,6 +45,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //set background audio
         setAudio(this, GAME_ACTIVITY);
         //get location of the player
         myLocation = new MyLocation(this);
@@ -53,19 +54,21 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         // ask for players name
         openDialog();
 
-
-        game_IBTN_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // set timer and start game
-                start();
-                stopButton();
-            }
-        });
+            game_IBTN_start.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // set timer and start game
+                    start();
+                    stopButton();
+                }
+            });
     }
 
+    //create and show Dialog
     public void openDialog() {
         MyAlertDialog dialog = new MyAlertDialog();
+        dialog.setCancelable(false);
+
         dialog.show(getSupportFragmentManager(), "dialog");
     }
 
@@ -74,6 +77,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         // create game
         game = new GamaManage(name_player1, name_player2);
 
+        //set player's name
         game_LBL_player1.setText(game.getPlayer1().getName());
         game_LBL_player2.setText(game.getPlayer2().getName());
     }
@@ -94,7 +98,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
     //set timer image
     //set button enabled
     private void stopButton() {
-        game_IBTN_start.setImageResource(R.drawable.ic_time);
+        game_IBTN_start.setImageResource(R.drawable.img_time);
         game_IBTN_start.setEnabled(false);
     }
 
@@ -110,6 +114,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
     }
 
 
+    // create Timer
     private Timer carousalTimer;
 
     public void start() {
@@ -138,6 +143,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         }, 0, 500);
     }
 
+    //update StatusBar
     private void updateStatusBar() {
         game_SB_statusBar.setProgress(game.getCheck());
     }
@@ -162,6 +168,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         return img;
     }
 
+    //Request for location Permissions
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == myLocation.PERMISSION_LOCATION) {
@@ -173,6 +180,7 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
         }
     }
 
+    //stop timer
     public void stop() {
         carousalTimer.cancel();
     }
@@ -180,8 +188,8 @@ public class GameActivity extends BaseActivity implements MyAlertDialog.DialogLi
     @Override
     protected void onStop() {
         super.onStop();
-        // if the player exit in the middle of the game stop timer
-        if (hasStarted){
+        // stop timer - if the player exit in the middle of the game
+        if (hasStarted) {
             stop();
         }
         if (isPlaying()) {

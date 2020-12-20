@@ -22,16 +22,14 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
+        //set audio
         setAudio(this, MAIN_ACTIVITY);
         findViews();
 
         main_BTN_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openNewGameActivity(MainActivity.this);
             }
         });
@@ -45,6 +43,7 @@ public class MainActivity extends BaseActivity {
         main_BTN_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //release audio
                 mpRelease = true;
                 finish();
             }

@@ -13,10 +13,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/medal"
+        android:src="@drawable/img_medal"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="40dp"
+        android:layout_weight="20"
         />
 
     <TextView
@@ -25,24 +26,25 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_weight="0.1"
+        android:layout_marginTop="30dp"
         android:background="@color/no_background"
         android:textColor="@color/red1"
         android:text="Both players WON!"
         android:fontFamily="@font/aldrich"
         android:textStyle="bold"
-        android:textSize="40dp"
+        android:textSize="30dp"
         />
     <ImageView
         android:id="@+id/finish_IMG_winner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1.5"
+        android:layout_weight="20"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
-        android:src="@drawable/player_0"
-        android:scaleType="centerInside"
+        android:src="@drawable/img_player_0"
+        android:scaleType="fitCenter"
         />
 
 
@@ -50,22 +52,25 @@
         android:id="@+id/finish_LBL_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="0.1"
         android:scaleType="fitEnd"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/no_background"
         android:textColor="@color/red1"
         android:text="Best Score:#"
         android:fontFamily="@font/aldrich"
         android:textStyle="bold"
-        android:textSize="40dp"
+        android:textSize="30dp"
         />
     <Button
         android:id="@+id/finish_BTN_backMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="0.1"
         android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/red1"
         android:fontFamily="@font/aldrich"
         android:text="menu" />

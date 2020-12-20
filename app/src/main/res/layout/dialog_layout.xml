@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <EditText
+        android:id="@+id/dialog_LBL_playerName1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="player 1"
+        android:maxLength="8"/>
+    <EditText
+        android:id="@+id/dialog_LBL_playerName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_LBL_playerName1"
+        android:hint="player 2"
+        android:maxLength="8"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_LBL_playerName2"
+        android:textSize="10dp"
+        android:textColor="@color/red1"
+        android:text="Maximum text length: 8"/>
+
+</RelativeLayout>

@@ -34,26 +34,25 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    //set audio
     protected void setAudio(Activity activity, String name) {
         if (name == MAIN_ACTIVITY) {
-            mp = MediaPlayer.create(this, R.raw.opening_melody);
+            mp = MediaPlayer.create(activity, R.raw.opening_melody);
         }
         if (name == GAME_ACTIVITY) {
-            mp = MediaPlayer.create(this, R.raw.card_playing);
+            mp = MediaPlayer.create(activity, R.raw.card_playing);
         }
         if (name == FINISH_ACTIVITY) {
-            mp = MediaPlayer.create(this, R.raw.winner_melody);
+            mp = MediaPlayer.create(activity, R.raw.winner_melody);
         }
     }
 
     protected void startAudio() {
         mp.start();
-
     }
 
     protected void prepareAudio() {
         mp.prepareAsync();
-
     }
 
 
@@ -77,6 +76,5 @@ public class BaseActivity extends AppCompatActivity {
     protected boolean isPlaying() {
         return mp.isPlaying();
     }
-
 
 }

@@ -53,17 +53,14 @@ public class FinishActivity extends BaseActivity {
     private TextView finish_LBL_playerName;
     private Button finish_BTN_backMenu;
     private Record winner;
-    private MyLocation myLocation;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
-
+        //set audio
         setAudio(this, FINISH_ACTIVITY);
 
-        myLocation = new MyLocation(FinishActivity.this);
         winner = new Record();
 
         findViews();
@@ -82,7 +79,6 @@ public class FinishActivity extends BaseActivity {
         finish_LBL_playerName = findViewById(R.id.finish_LBL_playerName);
         finish_BTN_backMenu = findViewById(R.id.finish_BTN_backMenu);
     }
-
 
     /*
     open score board
@@ -107,6 +103,7 @@ public class FinishActivity extends BaseActivity {
 
 
     private void showResults() {
+        //get winner
         winner = (Record) getIntent().getSerializableExtra("RECORD");
         //set score
         finish_LBL_score.setText("Best Score: " + winner.getScore());
@@ -125,9 +122,9 @@ public class FinishActivity extends BaseActivity {
 
     }
 
-
+    // get winner image
     private int getWinnerImage(int winner) {
-        String url = "drawable/" + "player_" + winner;
+        String url = "drawable/" + "img_player_" + winner;
         int img = getResources().getIdentifier(url, "drawable", getPackageName());
         return img;
     }

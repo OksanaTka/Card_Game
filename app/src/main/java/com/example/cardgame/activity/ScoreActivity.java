@@ -40,7 +40,7 @@ public class ScoreActivity extends BaseActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.score_LAY_list, fragment_list).commit();
 
         //send score board to list and map fragment
-        getIntent().putExtra("SCORE_BOARD", openScoreBoard());
+        getIntent().putExtra(SCORE_BOARD, openScoreBoard());
 
 
         fragment_map = new MapFragment();
@@ -63,6 +63,7 @@ public class ScoreActivity extends BaseActivity {
 
     /**
      * get saved score board, if score board is null - create new
+     *
      * @return Score Board
      */
     public TopTen openScoreBoard() {
