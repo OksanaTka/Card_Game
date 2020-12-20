@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.example.cardgame.CallBack.CallBack_List;
+import com.example.cardgame.callBack.CallBack_List;
 import com.example.cardgame.R;
 import com.example.cardgame.fragments.ListFragment;
 import com.example.cardgame.fragments.MapFragment;

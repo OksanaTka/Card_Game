@@ -9,16 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.cardgame.Adapter.RecordAdapter;
-import com.example.cardgame.CallBack.CallBack_List;
+import com.example.cardgame.adapter.RecordAdapter;
+import com.example.cardgame.callBack.CallBack_List;
 import com.example.cardgame.R;
-import com.example.cardgame.objects.Record;
 import com.example.cardgame.objects.TopTen;
-
-import java.util.List;
 
 
 public class ListFragment extends Fragment {

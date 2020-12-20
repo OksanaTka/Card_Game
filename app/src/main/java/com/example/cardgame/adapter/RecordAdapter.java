@@ -1,4 +1,4 @@
-package com.example.cardgame.Adapter;
+package com.example.cardgame.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
